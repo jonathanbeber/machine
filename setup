@@ -4,20 +4,20 @@ if test "$(uname)" = "Darwin"; then
     echo "Installing xcode..."
     xcode-select --install
   fi
-  if test ! "$(which brew)"; then
+  if test ! $(which brew); then
     echo "Installing homebrew..."
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   else
     brew update
   fi
-  if test ! "$(which ansible)"; then
+  if test ! $(which ansible); then
     echo "Installing ansible..."
     brew install ansible
   else
     brew upgrade ansible
   fi
 elif test "$(uname)" = "Linux"; then
-  if test -f /etc/lsb-release -a ! "$(which ansible)"; then
+  if test -f /etc/lsb-release -a ! $(which ansible); then
     echo "Installing ansible..."
     sudo apt-get install -y software-properties-common
     sudo apt-add-repository -y ppa:ansible/ansible
@@ -27,13 +27,12 @@ elif test "$(uname)" = "Linux"; then
   printf '\n%s\n%s\n' '[privilege_escalation]' 'become = True' >> ansible.cfg
 fi
 
-if test ! "$(which ansible)"; then
+if test ! $(which ansible); then
   echo "Not supported yet."
   exit 1
 fi
 
 python --version
 ansible --version
-ansible-galaxy install -r requirements.yml -p roles
 ansible-playbook main.yml
-test -d ~/.dotfiles && cd ~/.dotfiles && ./script/bootstrap
+test -d ~/.dotfiles && cd $_ && ./script/bootstrap
