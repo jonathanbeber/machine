@@ -3,7 +3,7 @@
   when: is_ubuntu13_plus
 - name: Install Docker
   package: name=docker-engine
-  when: is_ubuntu13_p
+  when: is_ubuntu13_plus
 - name: Install Docker for Mac
   homebrew_cask: name=docker
   when: is_osx
