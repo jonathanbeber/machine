@@ -7,4 +7,5 @@
     - caskroom/cask
     - caskroom/fonts
     - caskroom/versions
+    - visual-studio-code
   when: is_osx
