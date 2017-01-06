@@ -1,0 +1,3 @@
+- name: Install VSC
+  homebrew_cask: name=visual-studio-code
+  when: is_osx

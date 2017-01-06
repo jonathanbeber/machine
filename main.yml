@@ -27,4 +27,5 @@
     - include: tasks/slack.yml
     - include: tasks/spotify.yml
     - include: tasks/terminal.yml
+    - include: tasks/visual-studio-code.yml
     - include: tasks/vlc.yml
