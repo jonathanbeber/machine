@@ -2,7 +2,7 @@
 
 Machine setup, powered by Ansible.
 
-I'm splitting my [dotfiles](https://github.com/caarlos0/dotfiles) repo
+I'm splitting my [dotfiles](https://github.com/caarlos0/dotfiles) repository
 in two repos:
 
 - dotfiles now handles only configuration
